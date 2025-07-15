@@ -16,3 +16,4 @@ workflows:
   main:
     jobs:
       - build
+      - central-orb/custom-test
