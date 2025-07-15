@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   central-orb: https://raw.githubusercontent.com/nanophate-cci/central-template-orb/refs/heads/main/central-orb.yml
+  private-orb: https://raw.githubusercontent.com/nanophate-cci/private-central-orb/refs/heads/main/private-orb.yml
 
 jobs:
   build:
@@ -11,11 +12,13 @@ jobs:
       - checkout
       - run: echo "This comes from orginal repo~!"
       - central-orb/sayhello
+      - private-orb/sayhello
 
 workflows:
   main:
     jobs:
       - build
       - central-orb/custom-test
+      - private-orb/custom-test
       - test:
           override-with: central-orb/custom-test
