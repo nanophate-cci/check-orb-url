@@ -9,7 +9,7 @@ jobs:
       - image: cimg/base:current
     steps:
       - checkout
-      - run: echo "This comes from orginal repo~!!"
+      - run: echo "This comes from orginal repo~!"
       - central-orb/sayhello
 
 workflows:
