@@ -1,0 +1,18 @@
+version: 2.1
+
+orbs:
+  central-orb: https://raw.githubusercontent.com/nanophate-cci/central-template-orb/refs/heads/main/central-orb.yml
+
+jobs:
+  build:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - checkout
+      - run: echo "This comes from orginal repo"
+      - central-orb/sayhello
+
+workflows:
+  main:
+    jobs:
+      - build
