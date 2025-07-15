@@ -16,5 +16,6 @@ workflows:
   main:
     jobs:
       - build
+      - central-orb/custom-test
       - test:
           override-with: central-orb/custom-test
