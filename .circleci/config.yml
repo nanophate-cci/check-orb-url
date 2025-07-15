@@ -13,6 +13,12 @@ jobs:
       - run: echo "This comes from orginal repo~!"
       - central-orb/sayhello
       - private-orb/sayhello
+  test:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - checkout
+      - run: echo "this is test job"
 
 workflows:
   main:
@@ -22,3 +28,4 @@ workflows:
       - private-orb/custom-test
       - test:
           override-with: central-orb/custom-test
+      - test
